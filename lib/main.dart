@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/view/profile_screen/profile_screen.dart';
 
 import 'package:food_app/view/splash_screen/splash_screen.dart';
 

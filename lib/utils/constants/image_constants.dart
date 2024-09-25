@@ -5,4 +5,6 @@ class ImageConstants {
   static const String HOME_SCREEN_LOGO =
       "assets/images/unsplash_sFdbI7P47XE.png";
   static const String SPLASH_SCREEN_LOGO = "assets/images/food_logo.png";
+  static const String CREATE_RECIPEE_IMAGE = "assets/images/image 14.png";
+  static const String DP = "assets/images/unsplash_Nsze2HlxoZo.png";
 }

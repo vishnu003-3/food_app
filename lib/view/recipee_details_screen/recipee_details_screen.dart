@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/dummy_db.dart';
 import 'package:food_app/utils/constants/color_constants.dart';
-import 'package:food_app/utils/constants/image_constants.dart';
+
 import 'package:food_app/view/global_widget/custom_button_card.dart';
+import 'package:food_app/view/global_widget/incredients_section.dart';
 
 class RecipeeDetailsScreen extends StatelessWidget {
   String recipeeTitile;
@@ -89,83 +91,25 @@ class RecipeeDetailsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20, vertical: 12),
-                  height: 76,
-                  decoration: BoxDecoration(color: ColorConstants.lightGrey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(ImageConstants.HOME_SCREEN_FOOD),
-                      Text("bread"),
-                      Text("200g")
-                    ],
-                  )),
               SizedBox(
-                height: 12,
+                height: 900,
+                child: ListView.separated(
+                  padding: EdgeInsets.all(8),
+                  separatorBuilder: (context, index) => SizedBox(
+                    height: 16,
+                  ),
+                  shrinkWrap: false,
+                  itemCount: DummyDb.IngridientList.length,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, index) => SingleChildScrollView(
+                    child: IngridientSection(
+                      gram: DummyDb.IngridientList[index]["gram"],
+                      image: DummyDb.IngridientList[index]["image"],
+                      name: DummyDb.IngridientList[index]["name"],
+                    ),
+                  ),
+                ),
               ),
-              Container(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20, vertical: 12),
-                  height: 76,
-                  decoration: BoxDecoration(color: ColorConstants.lightGrey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(ImageConstants.SPLASH_SCREEN_LOGO),
-                      Text("egg"),
-                      Text("200g")
-                    ],
-                  )),
-              SizedBox(
-                height: 12,
-              ),
-              Container(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20, vertical: 12),
-                  height: 76,
-                  decoration: BoxDecoration(color: ColorConstants.lightGrey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(ImageConstants.HOME_SCREEN_FOOD),
-                      Text("milk"),
-                      Text("200g")
-                    ],
-                  )),
-              SizedBox(
-                height: 12,
-              ),
-              Container(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20, vertical: 12),
-                  height: 76,
-                  decoration: BoxDecoration(color: ColorConstants.lightGrey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(ImageConstants.HOME_SCREEN_FOOD),
-                      Text("butter"),
-                      Text("200g")
-                    ],
-                  )),
-              SizedBox(
-                height: 12,
-              ),
-              Container(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20, vertical: 12),
-                  height: 76,
-                  decoration: BoxDecoration(color: ColorConstants.lightGrey),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(ImageConstants.HOME_SCREEN_FOOD),
-                      Text("vanila"),
-                      Text("200g")
-                    ],
-                  )),
             ],
           ),
         ),

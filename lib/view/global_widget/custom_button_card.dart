@@ -3,10 +3,14 @@ import 'package:food_app/utils/constants/color_constants.dart';
 
 class Custom_botton extends StatelessWidget {
   String data;
+  final double? height;
+  final double? width;
   void Function()? onButtonpressed;
   Custom_botton({
     required this.data,
     this.onButtonpressed,
+    this.height,
+    this.width,
     super.key,
   });
 
@@ -15,8 +19,8 @@ class Custom_botton extends StatelessWidget {
     return InkWell(
       onTap: onButtonpressed,
       child: Container(
-        width: 77,
-        height: 36,
+        width: width,
+        height: height,
         child: Center(
           child: Text(
             data,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/view/bookmark_screen/bookmark_screen.dart';
+import 'package:food_app/view/create_recipee_screen/create_recipee_screen.dart';
 import 'package:food_app/view/home_screen/home_screen.dart';
+import 'package:food_app/view/profile_screen/profile_screen.dart';
 
 class BottomNavscreen extends StatefulWidget {
   const BottomNavscreen({super.key});
@@ -17,9 +19,7 @@ class _BottomNavscreenState extends State<BottomNavscreen> {
     Container(
       color: Colors.blue,
     ),
-    Container(
-      color: Colors.black,
-    ),
+    ProfileScreen()
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,13 @@ class _BottomNavscreenState extends State<BottomNavscreen> {
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         backgroundColor: Colors.red,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CreateRecipeeScreen(),
+              ));
+        },
         child: Icon(Icons.add),
       ),
       // appBar: AppBar(
