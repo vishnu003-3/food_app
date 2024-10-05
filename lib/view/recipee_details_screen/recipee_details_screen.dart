@@ -6,17 +6,17 @@ import 'package:food_app/view/global_widget/custom_button_card.dart';
 import 'package:food_app/view/global_widget/incredients_section.dart';
 
 class RecipeeDetailsScreen extends StatelessWidget {
-  String recipeeTitile;
+  String recipetitle;
   String image;
   String rating;
-  String bg;
+  String profileurl;
   String userName;
 
   RecipeeDetailsScreen(
       {required this.image,
       required this.rating,
-      required this.recipeeTitile,
-      required this.bg,
+      required this.recipetitle,
+      required this.profileurl,
       required this.userName,
       super.key});
 
@@ -24,7 +24,7 @@ class RecipeeDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(recipeeTitile),
+        title: Text(recipetitle),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -60,7 +60,7 @@ class RecipeeDetailsScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 20,
-                    backgroundImage: NetworkImage(bg),
+                    backgroundImage: NetworkImage(profileurl),
                   ),
                   SizedBox(
                     width: 8,
